@@ -1,0 +1,57 @@
+{
+  "total_files": 10,
+  "verified_files": 10,
+  "failed_files": 0,
+  "verification_details": [
+    {
+      "file": "raw\\audio\\sessiz\\2024-01-15_09-00-00_sessiz_iphone_wav_10min.wav",
+      "status": "verified",
+      "hash_match": true
+    },
+    {
+      "file": "raw\\audio\\sessiz\\2024-01-15_09-00-00_sessiz_samsung_wav_10min.wav",
+      "status": "verified",
+      "hash_match": true
+    },
+    {
+      "file": "raw\\audio\\ofis\\2024-01-15_10-00-00_ofis_iphone_wav_10min.wav",
+      "status": "verified",
+      "hash_match": true
+    },
+    {
+      "file": "raw\\audio\\ofis\\2024-01-15_10-00-00_ofis_samsung_wav_10min.wav",
+      "status": "verified",
+      "hash_match": true
+    },
+    {
+      "file": "raw\\audio\\dis_mekan\\2024-01-15_11-00-00_dis_mekan_iphone_wav_10min.wav",
+      "status": "verified",
+      "hash_match": true
+    },
+    {
+      "file": "raw\\audio\\dis_mekan\\2024-01-15_11-00-00_dis_mekan_samsung_wav_10min.wav",
+      "status": "verified",
+      "hash_match": true
+    },
+    {
+      "file": "raw\\video\\led_statik\\2024-01-15_14-00-00_led_statik_iphone_mp4_5min.mp4",
+      "status": "verified",
+      "hash_match": true
+    },
+    {
+      "file": "raw\\video\\led_dinamik\\2024-01-15_15-00-00_led_dinamik_iphone_mp4_5min.mp4",
+      "status": "verified",
+      "hash_match": true
+    },
+    {
+      "file": "raw\\video\\karsilastirma\\2024-01-15_16-00-00_karsilastirma_iphone_mp4_5min.mp4",
+      "status": "verified",
+      "hash_match": true
+    },
+    {
+      "file": "raw\\images\\led_seri\\2024-01-15_17-00-00_led_seri_iphone_jpg_60sec.jpg",
+      "status": "verified",
+      "hash_match": true
+    }
+  ]
+}

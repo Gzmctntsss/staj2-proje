@@ -1,0 +1,252 @@
+{
+  "raw\\audio\\sessiz\\2024-01-15_09-00-00_sessiz_iphone_wav_10min.wav": {
+    "filename": "2024-01-15_09-00-00_sessiz_iphone_wav_10min.wav",
+    "file_path": "data\\raw\\audio\\sessiz\\2024-01-15_09-00-00_sessiz_iphone_wav_10min.wav",
+    "file_size_bytes": 52920044,
+    "file_size_mb": 50.47,
+    "created_time": "2025-08-15T13:08:16.653342",
+    "modified_time": "2025-08-15T13:08:16.821144",
+    "hash_sha256": "be6c8bcf787a395c82bd9316ae141f83952b022e856daa20a5782087c1566416",
+    "collection_metadata": {
+      "file_type": "audio",
+      "source_device": "iphone",
+      "environment": "sessiz",
+      "duration": "10 dakika",
+      "format": "WAV",
+      "collection_date": "2024-01-15",
+      "collection_time": "09-00-00_sessiz",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  },
+  "raw\\audio\\sessiz\\2024-01-15_09-00-00_sessiz_samsung_wav_10min.wav": {
+    "filename": "2024-01-15_09-00-00_sessiz_samsung_wav_10min.wav",
+    "file_path": "data\\raw\\audio\\sessiz\\2024-01-15_09-00-00_sessiz_samsung_wav_10min.wav",
+    "file_size_bytes": 52920044,
+    "file_size_mb": 50.47,
+    "created_time": "2025-08-15T13:08:18.705281",
+    "modified_time": "2025-08-15T13:08:18.845495",
+    "hash_sha256": "be6c8bcf787a395c82bd9316ae141f83952b022e856daa20a5782087c1566416",
+    "collection_metadata": {
+      "file_type": "audio",
+      "source_device": "samsung",
+      "environment": "sessiz",
+      "duration": "10 dakika",
+      "format": "WAV",
+      "collection_date": "2024-01-15",
+      "collection_time": "09-00-00_sessiz",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  },
+  "raw\\audio\\ofis\\2024-01-15_10-00-00_ofis_iphone_wav_10min.wav": {
+    "filename": "2024-01-15_10-00-00_ofis_iphone_wav_10min.wav",
+    "file_path": "data\\raw\\audio\\ofis\\2024-01-15_10-00-00_ofis_iphone_wav_10min.wav",
+    "file_size_bytes": 52920044,
+    "file_size_mb": 50.47,
+    "created_time": "2025-08-15T13:08:20.661666",
+    "modified_time": "2025-08-15T13:08:20.785505",
+    "hash_sha256": "be6c8bcf787a395c82bd9316ae141f83952b022e856daa20a5782087c1566416",
+    "collection_metadata": {
+      "file_type": "audio",
+      "source_device": "iphone",
+      "environment": "ofis",
+      "duration": "10 dakika",
+      "format": "WAV",
+      "collection_date": "2024-01-15",
+      "collection_time": "10-00-00_ofis",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  },
+  "raw\\audio\\ofis\\2024-01-15_10-00-00_ofis_samsung_wav_10min.wav": {
+    "filename": "2024-01-15_10-00-00_ofis_samsung_wav_10min.wav",
+    "file_path": "data\\raw\\audio\\ofis\\2024-01-15_10-00-00_ofis_samsung_wav_10min.wav",
+    "file_size_bytes": 52920044,
+    "file_size_mb": 50.47,
+    "created_time": "2025-08-15T13:08:22.278203",
+    "modified_time": "2025-08-15T13:08:22.412368",
+    "hash_sha256": "be6c8bcf787a395c82bd9316ae141f83952b022e856daa20a5782087c1566416",
+    "collection_metadata": {
+      "file_type": "audio",
+      "source_device": "samsung",
+      "environment": "ofis",
+      "duration": "10 dakika",
+      "format": "WAV",
+      "collection_date": "2024-01-15",
+      "collection_time": "10-00-00_ofis",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  },
+  "raw\\audio\\dis_mekan\\2024-01-15_11-00-00_dis_mekan_iphone_wav_10min.wav": {
+    "filename": "2024-01-15_11-00-00_dis_mekan_iphone_wav_10min.wav",
+    "file_path": "data\\raw\\audio\\dis_mekan\\2024-01-15_11-00-00_dis_mekan_iphone_wav_10min.wav",
+    "file_size_bytes": 52920044,
+    "file_size_mb": 50.47,
+    "created_time": "2025-08-15T13:08:24.272235",
+    "modified_time": "2025-08-15T13:08:24.411339",
+    "hash_sha256": "be6c8bcf787a395c82bd9316ae141f83952b022e856daa20a5782087c1566416",
+    "collection_metadata": {
+      "file_type": "audio",
+      "source_device": "iphone",
+      "environment": "dis_mekan",
+      "duration": "10 dakika",
+      "format": "WAV",
+      "collection_date": "2024-01-15",
+      "collection_time": "mekan/2024-01-15_11-00-00",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  },
+  "raw\\audio\\dis_mekan\\2024-01-15_11-00-00_dis_mekan_samsung_wav_10min.wav": {
+    "filename": "2024-01-15_11-00-00_dis_mekan_samsung_wav_10min.wav",
+    "file_path": "data\\raw\\audio\\dis_mekan\\2024-01-15_11-00-00_dis_mekan_samsung_wav_10min.wav",
+    "file_size_bytes": 52920044,
+    "file_size_mb": 50.47,
+    "created_time": "2025-08-15T13:08:26.192474",
+    "modified_time": "2025-08-15T13:08:26.348521",
+    "hash_sha256": "be6c8bcf787a395c82bd9316ae141f83952b022e856daa20a5782087c1566416",
+    "collection_metadata": {
+      "file_type": "audio",
+      "source_device": "samsung",
+      "environment": "dis_mekan",
+      "duration": "10 dakika",
+      "format": "WAV",
+      "collection_date": "2024-01-15",
+      "collection_time": "mekan/2024-01-15_11-00-00",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  },
+  "raw\\video\\led_statik\\2024-01-15_14-00-00_led_statik_iphone_mp4_5min.mp4": {
+    "filename": "2024-01-15_14-00-00_led_statik_iphone_mp4_5min.mp4",
+    "file_path": "data\\raw\\video\\led_statik\\2024-01-15_14-00-00_led_statik_iphone_mp4_5min.mp4",
+    "file_size_bytes": 192,
+    "file_size_mb": 0.0,
+    "created_time": "2025-08-15T13:08:26.594433",
+    "modified_time": "2025-08-15T13:08:26.599103",
+    "hash_sha256": "a41d04006e9be4645ad00617803cfa9d55c932407cdf02e703885324d4caa577",
+    "collection_metadata": {
+      "file_type": "video",
+      "source_device": "iphone",
+      "environment": "led_aydinlatma",
+      "duration": "5 dakika",
+      "format": "MP4",
+      "collection_date": "2024-01-15",
+      "collection_time": "statik/2024-01-15_14-00-00",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  },
+  "raw\\video\\led_dinamik\\2024-01-15_15-00-00_led_dinamik_iphone_mp4_5min.mp4": {
+    "filename": "2024-01-15_15-00-00_led_dinamik_iphone_mp4_5min.mp4",
+    "file_path": "data\\raw\\video\\led_dinamik\\2024-01-15_15-00-00_led_dinamik_iphone_mp4_5min.mp4",
+    "file_size_bytes": 193,
+    "file_size_mb": 0.0,
+    "created_time": "2025-08-15T13:08:26.626326",
+    "modified_time": "2025-08-15T13:08:26.626326",
+    "hash_sha256": "77f8fdb8c81cbdfb4bd254dd64d999ca45a1d157b0df0f49a24cd004fc56def2",
+    "collection_metadata": {
+      "file_type": "video",
+      "source_device": "iphone",
+      "environment": "led_aydinlatma",
+      "duration": "5 dakika",
+      "format": "MP4",
+      "collection_date": "2024-01-15",
+      "collection_time": "dinamik/2024-01-15_15-00-00",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  },
+  "raw\\video\\karsilastirma\\2024-01-15_16-00-00_karsilastirma_iphone_mp4_5min.mp4": {
+    "filename": "2024-01-15_16-00-00_karsilastirma_iphone_mp4_5min.mp4",
+    "file_path": "data\\raw\\video\\karsilastirma\\2024-01-15_16-00-00_karsilastirma_iphone_mp4_5min.mp4",
+    "file_size_bytes": 195,
+    "file_size_mb": 0.0,
+    "created_time": "2025-08-15T13:08:26.647674",
+    "modified_time": "2025-08-15T13:08:26.647674",
+    "hash_sha256": "357dfcf1e55d2fb8dab318ca28e6dfbdd3d4bfb43654c79ee08d4d9b7e93cbc7",
+    "collection_metadata": {
+      "file_type": "video",
+      "source_device": "iphone",
+      "environment": "bilinmeyen",
+      "duration": "5 dakika",
+      "format": "MP4",
+      "collection_date": "2024-01-15",
+      "collection_time": "16-00-00_karsilastirma",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  },
+  "raw\\images\\led_seri\\2024-01-15_17-00-00_led_seri_iphone_jpg_60sec.jpg": {
+    "filename": "2024-01-15_17-00-00_led_seri_iphone_jpg_60sec.jpg",
+    "file_path": "data\\raw\\images\\led_seri\\2024-01-15_17-00-00_led_seri_iphone_jpg_60sec.jpg",
+    "file_size_bytes": 175,
+    "file_size_mb": 0.0,
+    "created_time": "2025-08-15T13:08:26.663563",
+    "modified_time": "2025-08-15T13:08:26.663563",
+    "hash_sha256": "49f77a35ab6751fb65f88cfb2cbe029c7b1e97e277a8baa0414e12c473a3b8fa",
+    "collection_metadata": {
+      "file_type": "image",
+      "source_device": "iphone",
+      "environment": "led_aydinlatma",
+      "duration": "1 dakika",
+      "format": "JPG",
+      "collection_date": "2024-01-15",
+      "collection_time": "seri/2024-01-15_17-00-00",
+      "location": "Istanbul, Turkey",
+      "coordinates": [
+        41.0082,
+        28.9784
+      ],
+      "weather": "Clear, 22°C, 65% humidity",
+      "notes": "Simulated data for testing purposes"
+    }
+  }
+}

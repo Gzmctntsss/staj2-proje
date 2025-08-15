@@ -1,0 +1,72 @@
+{
+  "project_info": {
+    "project_name": "ENF Metadata Gömme Projesi",
+    "project_version": "1.0",
+    "collection_date": "2024-01-15",
+    "collector": "gzmctntsss",
+    "location": "Istanbul, Turkey"
+  },
+  "collection_protocol": {
+    "audio_recording": {
+      "format": "WAV, 44.1 kHz, 16-bit",
+      "duration": "10 minutes per environment",
+      "environments": [
+        "sessiz",
+        "ofis",
+        "dis_mekan"
+      ],
+      "devices": [
+        "iPhone",
+        "Samsung"
+      ]
+    },
+    "video_recording": {
+      "format": "MP4, H.264, 1920x1080",
+      "duration": "5 minutes per scenario",
+      "scenarios": [
+        "led_statik",
+        "led_dinamik",
+        "karsilastirma"
+      ],
+      "fps": [
+        30,
+        60,
+        30
+      ]
+    },
+    "image_capture": {
+      "format": "JPG, RAW",
+      "frequency": "1 photo/second for 1 minute",
+      "lighting": "LED (50 Hz)"
+    }
+  },
+  "data_integrity": {
+    "hash_algorithm": "SHA-256",
+    "checksums_file": "data\\checksums.csv",
+    "total_files": 10,
+    "verification_status": "pending"
+  },
+  "collection_log": [
+    {
+      "timestamp": "2024-01-15T09:00:00Z",
+      "action": "Collection started",
+      "location": "Sessiz oda",
+      "device": "iPhone",
+      "notes": "LED aydınlatma, gürültü seviyesi <30 dB"
+    },
+    {
+      "timestamp": "2024-01-15T11:30:00Z",
+      "action": "Collection completed",
+      "location": "Tüm ortamlar",
+      "device": "iPhone + Samsung",
+      "notes": "3 farklı ortamda ses kayıtları tamamlandı"
+    },
+    {
+      "timestamp": "2024-01-15T17:00:00Z",
+      "action": "Data archiving",
+      "location": "Data center",
+      "device": "Computer",
+      "notes": "Tüm dosyalar hash'lendi ve kataloglandı"
+    }
+  ]
+}

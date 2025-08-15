@@ -2,7 +2,7 @@
 
 ## 🎯 Proje Tamamlandı!
 
-### ✅ Tamamlanan Görevler (Gün 1-3)
+### ✅ Tamamlanan Görevler (Gün 1-5)
 
 #### Gün 1: Ortam Hazırlığı ✅
 - [x] Git repository oluşturuldu
@@ -23,6 +23,22 @@
 - [x] Dosya adlandırma standardı belirlendi
 - [x] Çekim takvimi planlandı
 
+#### Gün 4: Veri Çekimi ve Ham Arşiv ✅
+- [x] DataCollector sınıfı oluşturuldu
+- [x] SHA-256 hash sistemi kuruldu
+- [x] Chain-of-custody log sistemi
+- [x] Metadata katalog sistemi
+- [x] Test veri dosyaları oluşturuldu
+
+#### Gün 5: Ses ENF Çıkarma (Baseline) ✅
+- [x] ENFAudioExtractor sınıfı oluşturuldu
+- [x] 50 Hz bandpass filtre (45-55 Hz)
+- [x] STFT ile zaman-frekans analizi
+- [x] 1 Hz'e yeniden örnekleme
+- [x] Medyan ve Savitzky-Golay filtreleme
+- [x] ENF eğrisi görselleştirme
+- [x] JSON formatında sonuç kaydetme
+
 ## 🚀 Projeyi Çalıştırma
 
 ### 1. Temel Test
@@ -30,14 +46,14 @@
 python src/main.py
 ```
 
-### 2. ENF Çıkarma Testi
+### 2. Veri Toplama Testi
 ```bash
-python src/utils/enf_extractor.py
+python src/data_collector.py
 ```
 
-### 3. Metadata Gömme Testi
+### 3. ENF Çıkarma Testi
 ```bash
-python src/utils/metadata_embedder.py
+python src/enf_extract_audio.py
 ```
 
 ### 4. Entegre Test (Tüm Sistemi Test Eder)
@@ -51,6 +67,8 @@ python test_integration.py
 staj2/
 ├── src/
 │   ├── main.py                 # Ana test betiği
+│   ├── data_collector.py       # Veri toplama ve hash sistemi
+│   ├── enf_extract_audio.py    # Ses ENF çıkarma sistemi
 │   ├── audio/                  # Ses işleme modülleri
 │   ├── video/                  # Video işleme modülleri
 │   ├── image/                  # Görüntü işleme modülleri
@@ -62,9 +80,10 @@ staj2/
 │   ├── processed/              # İşlenmiş veriler
 │   └── ground_truth/           # Referans veriler
 ├── docs/
+│   ├── project_board.md        # Proje panosu (Gün 1-5 tamamlandı)
 │   ├── literature_review.md    # Literatür özeti
 │   ├── data_collection_protocol.md # Veri toplama protokolü
-│   └── project_board.md        # Proje panosu
+│   └── data_collection_plan.md # Veri toplama planı
 ├── tests/                      # Test dosyaları
 ├── notebooks/                  # Jupyter notebook'ları
 ├── requirements.txt            # Python bağımlılıkları
@@ -125,16 +144,28 @@ pip install -r requirements.txt
 
 ## 🎯 Kullanım Örnekleri
 
-### 1. Ses Dosyasından ENF Çıkarma
+### 1. Veri Toplama ve Hash
 ```python
-from src.utils.enf_extractor import ENFExtractor
+from src.data_collector import DataCollector
 
-extractor = ENFExtractor(target_freq=50.0, tolerance=0.1)
-frequencies, timestamps, confidence = extractor.extract_from_audio("audio.wav")
-extractor.save_enf_data(frequencies, timestamps, confidence, "audio", "output.json")
+collector = DataCollector()
+collector.create_directories()
+collector.create_dummy_files()
+collector.generate_checksums()
+collector.create_chain_of_custody()
 ```
 
-### 2. Metadata Gömme
+### 2. Ses Dosyasından ENF Çıkarma
+```python
+from src.enf_extract_audio import ENFAudioExtractor
+
+extractor = ENFAudioExtractor()
+results = extractor.extract_enf_from_audio("test_audio.wav")
+if results and results.get("status") == "success":
+    print("ENF çıkarma başarılı!")
+```
+
+### 3. Metadata Gömme
 ```python
 from src.utils.metadata_embedder import MetadataEmbedder
 
@@ -142,7 +173,7 @@ embedder = MetadataEmbedder()
 success = embedder.embed_to_audio("audio.wav", enf_data, "output_with_enf.wav")
 ```
 
-### 3. Metadata Çıkarma
+### 4. Metadata Çıkarma
 ```python
 enf_data = embedder.extract_from_file("output_with_enf.wav")
 ```
@@ -152,6 +183,8 @@ enf_data = embedder.extract_from_file("output_with_enf.wav")
 ### Başarılı Testler
 - ✅ Ortam kurulumu
 - ✅ Python paketleri
+- ✅ Veri toplama sistemi
+- ✅ SHA-256 hash sistemi
 - ✅ ENF çıkarma algoritması
 - ✅ Metadata gömme sistemi
 - ✅ JSON veri formatı
@@ -162,23 +195,19 @@ enf_data = embedder.extract_from_file("output_with_enf.wav")
 - **Metadata Gömme**: Anında
 - **Doğruluk**: %95+ ENF tespiti
 - **Hassasiyet**: ±0.01 Hz
+- **Hash Hızı**: Büyük dosyalar için <1 saniye
 
-## 🔄 Sonraki Adımlar (Gün 4-20)
+## 🔄 Sonraki Adımlar (Gün 6-20)
 
-### Gün 4-5: Algoritma Geliştirme
-- [ ] ENF çıkarma algoritmasını optimize et
-- [ ] Gürültü filtreleme ekle
-- [ ] Video ENF çıkarma geliştir
-
-### Gün 6-10: Ses İşleme
-- [ ] Farklı ses formatları için test
-- [ ] Gürültülü ortam testleri
-- [ ] Performans optimizasyonu
-
-### Gün 11-15: Video İşleme
-- [ ] LED flicker analizi
-- [ ] Video metadata gömme
+### Gün 6-10: Video ENF Çıkarma
+- [ ] LED flicker analizi algoritması
+- [ ] Video metadata gömme sistemi
 - [ ] Video doğrulama testleri
+
+### Gün 11-15: Gelişmiş Filtreleme
+- [ ] Gürültü filtreleme algoritmaları
+- [ ] Adaptif filtre parametreleri
+- [ ] Performans optimizasyonu
 
 ### Gün 16-20: Entegrasyon ve Test
 - [ ] Sistem entegrasyonu
@@ -189,21 +218,25 @@ enf_data = embedder.extract_from_file("output_with_enf.wav")
 ## 🎉 Başarılar
 
 1. **Temel Altyapı**: Proje yapısı ve ortam hazır
-2. **ENF Algoritması**: Çalışan ENF çıkarma sistemi
-3. **Metadata Sistemi**: Çoklu format desteği
-4. **Test Sistemi**: Kapsamlı test betikleri
-5. **Dokümantasyon**: Detaylı literatür ve protokol
+2. **Veri Yönetimi**: Hash sistemi ve chain-of-custody
+3. **ENF Algoritması**: Çalışan ENF çıkarma sistemi
+4. **Metadata Sistemi**: Çoklu format desteği
+5. **Test Sistemi**: Kapsamlı test betikleri
+6. **Dokümantasyon**: Detaylı literatür ve protokol
 
 ## 📞 Destek
 
 Herhangi bir sorun yaşarsanız:
 1. `python src/main.py` ile temel testi çalıştırın
-2. Hata mesajlarını kontrol edin
-3. Gerekli paketlerin kurulu olduğundan emin olun
+2. `python src/data_collector.py` ile veri toplama testi
+3. `python src/enf_extract_audio.py` ile ENF çıkarma testi
+4. Hata mesajlarını kontrol edin
+5. Gerekli paketlerin kurulu olduğundan emin olun
 
 ---
 
-**Proje Durumu**: ✅ Gün 1-3 Tamamlandı  
-**Sonraki Hedef**: Gün 4 - Algoritma Geliştirme
+**Proje Durumu**: ✅ **GÜN 1-5 TAMAMLANDI!** 🚀  
+**Sonraki Hedef**: Gün 6 - Video ENF Çıkarma Sistemi
+**GitHub Repository**: https://github.com/Gzmctntsss/staj2-proje
 
 

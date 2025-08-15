@@ -1,0 +1,23 @@
+name: enf-metadata
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - matplotlib
+  - jupyter
+  - pip
+  - pip:
+    - librosa
+    - opencv-python
+    - mutagen
+    - pillow
+    - piexif
+    - pyexiftool
+    - pydub
+    - pandas
+    - scikit-learn
+    - pytest
+

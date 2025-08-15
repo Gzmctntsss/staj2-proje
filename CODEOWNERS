@@ -1,0 +1,25 @@
+# ENF Metadata Gömme Projesi - CODEOWNERS
+
+# Ana proje dosyaları
+* @staj-ogrencisi
+
+# Python kodları
+*.py @staj-ogrencisi
+
+# Konfigürasyon dosyaları
+*.yml @staj-ogrencisi
+*.yaml @staj-ogrencisi
+*.json @staj-ogrencisi
+
+# Dokümantasyon
+*.md @staj-ogrencisi
+docs/ @staj-ogrencisi
+
+# Test dosyaları
+tests/ @staj-ogrencisi
+*_test.py @staj-ogrencisi
+
+# Jupyter notebook'ları
+*.ipynb @staj-ogrencisi
+notebooks/ @staj-ogrencisi
+

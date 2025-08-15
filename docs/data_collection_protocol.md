@@ -1,172 +1,160 @@
-# Veri Toplama Protokolü ve Test Senaryoları
+# ENF Veri Toplama Protokolü
 
-## Veri Toplama Stratejisi
+## 📋 Genel Bakış
+Bu doküman, ENF (Elektrik Şebekesi Frekansı) verilerinin toplanması, işlenmesi ve metadata'ya gömülmesi için standart protokolleri tanımlar.
 
-### 1. Ses Kayıtları
+## 🎯 Veri Toplama Hedefleri
+- **Ses Dosyaları**: Mikrofon kayıtları, müzik dosyaları
+- **Video Dosyaları**: Kamera kayıtları, film dosyaları
+- **Fotoğraf Dosyaları**: Dijital kamera görüntüleri
 
-#### Ortam Senaryoları
-1. **Sessiz Ortam** (10 dakika)
-   - Yer: Sessiz oda
-   - Aydınlatma: LED lamba
-   - Cihaz: 2 farklı telefon/kayıt cihazı
-   - Format: WAV, 44.1 kHz, 16-bit
+## 📁 Dosya Organizasyonu
 
-2. **Ofis Ortamı** (10 dakika)
-   - Yer: Çalışma ofisi
-   - Aydınlatma: Floresan + LED
-   - Gürültü: Klavye, konuşma sesleri
-   - Format: WAV, 44.1 kHz, 16-bit
-
-3. **Dış Mekan** (10 dakika)
-   - Yer: Açık alan
-   - Aydınlatma: Güneş ışığı
-   - Gürültü: Trafik, rüzgar
-   - Format: WAV, 44.1 kHz, 16-bit
-
-### 2. Video Kayıtları
-
-#### LED Aydınlatma Senaryoları
-1. **Statik Video** (5 dakika)
-   - Konu: Sabit nesne
-   - Aydınlatma: LED lamba
-   - FPS: 30 fps
-   - Format: MP4, H.264
-
-2. **Dinamik Video** (5 dakika)
-   - Konu: Hareketli nesne
-   - Aydınlatma: LED lamba
-   - FPS: 60 fps
-   - Format: MP4, H.264
-
-3. **Karşılaştırma Video** (5 dakika)
-   - Konu: Aynı sahne
-   - Aydınlatma: LED vs Floresan
-   - FPS: 30 fps
-   - Format: MP4, H.264
-
-### 3. Fotoğraf Serisi (Opsiyonel)
-
-#### LED Altında Seri Çekim
-- Süre: 1 dakika
-- Frekans: 1 fotoğraf/saniye
-- Aydınlatma: LED lamba
-- Format: JPG, RAW
-
-## Dosya Adlandırma Standardı
-
-### Format: `{tarih}_{saat}_{ortam}_{cihaz}_{format}_{süre}.{uzantı}`
-
-#### Örnekler:
+### Raw Data (Ham Veri)
 ```
-2024-01-15_14-30-00_sessiz_iphone_wav_10min.wav
-2024-01-15_14-45-00_ofis_samsung_wav_10min.wav
-2024-01-15_15-00-00_dis_mekan_iphone_wav_10min.wav
-2024-01-15_15-15-00_led_statik_iphone_mp4_5min.mp4
-2024-01-15_15-25-00_led_dinamik_samsung_mp4_5min.mp4
-2024-01-15_15-35-00_led_seri_iphone_jpg_60sec.jpg
+data/raw/
+├── audio/
+│   ├── microphone_recordings/
+│   ├── music_files/
+│   └── ambient_sounds/
+├── video/
+│   ├── camera_recordings/
+│   ├── movie_files/
+│   └── screen_recordings/
+└── images/
+    ├── digital_camera/
+    ├── smartphone_camera/
+    └── scanned_documents/
 ```
 
-## Eşzamanlı Kayıt Senaryosu
+### Processed Data (İşlenmiş Veri)
+```
+data/processed/
+├── enf_extracted/
+├── metadata_embedded/
+└── quality_assessed/
+```
 
-### Çapraz Doğrulama İçin
-1. **İki Cihazla Eşzamanlı Kayıt**
-   - Cihaz 1: iPhone (ana cihaz)
-   - Cihaz 2: Samsung (doğrulama cihazı)
-   - Süre: 5 dakika
-   - Ortam: Sessiz oda, LED aydınlatma
+### Ground Truth (Gerçek Değerler)
+```
+data/ground_truth/
+├── reference_enf/
+├── timestamp_data/
+└── location_data/
+```
 
-2. **Senkronizasyon**
-   - Başlangıç sinyali: El çırpma
-   - Bitiş sinyali: El çırpma
-   - Zaman damgası: Her iki cihazda da
+## 🔧 Veri Toplama Araçları
 
-## Test Senaryoları
+### Ses Kayıtları
+- **Format**: WAV, FLAC, MP3
+- **Örnekleme Frekansı**: 44.1 kHz minimum
+- **Bit Derinliği**: 16-bit minimum
+- **Süre**: 10 saniye - 5 dakika
+
+### Video Kayıtları
+- **Format**: MP4, AVI, MOV
+- **Çözünürlük**: 720p minimum
+- **Frame Rate**: 30 fps minimum
+- **Süre**: 10 saniye - 2 dakika
+
+### Fotoğraflar
+- **Format**: JPEG, PNG, RAW
+- **Çözünürlük**: 1920x1080 minimum
+- **Metadata**: EXIF bilgileri korunmalı
+
+## 📊 ENF Veri Kalitesi Kriterleri
+
+### Minimum Gereksinimler
+- **Frekans Çözünürlüğü**: 0.01 Hz
+- **Zaman Çözünürlüğü**: 1 saniye
+- **Sinyal-Gürültü Oranı**: 20 dB minimum
+- **Doğruluk**: ±0.1 Hz
+
+### Kalite Kontrol
+- [ ] Ses seviyesi yeterli
+- [ ] Gürültü seviyesi kabul edilebilir
+- [ ] ENF sinyali tespit edilebilir
+- [ ] Metadata bilgileri mevcut
+
+## 🚀 Veri Toplama Adımları
+
+### 1. Ön Hazırlık
+- [ ] Kayıt ekipmanı kontrolü
+- [ ] Ortam gürültü seviyesi ölçümü
+- [ ] ENF referans sinyali hazırlama
+- [ ] Dosya adlandırma standardı belirleme
+
+### 2. Kayıt Süreci
+- [ ] Ortam koşulları kaydı
+- [ ] Zaman damgası ekleme
+- [ ] Konum bilgisi kaydetme
+- [ ] Kalite kontrol testleri
+
+### 3. Sonrası İşlemler
+- [ ] Dosya formatı kontrolü
+- [ ] Metadata ekleme
+- [ ] Kalite değerlendirmesi
+- [ ] Arşivleme ve yedekleme
+
+## 📈 Veri Analiz Metrikleri
+
+### ENF Çıkarma Performansı
+- **Başarı Oranı**: %95 minimum
+- **Hata Oranı**: %5 maksimum
+- **İşlem Süresi**: 10 saniye maksimum
+
+### Metadata Gömme Performansı
+- **Gömme Başarısı**: %100
+- **Dosya Boyutu Artışı**: %1 maksimum
+- **Kalite Kaybı**: Yok
+
+## 🔍 Test Senaryoları
 
 ### Senaryo 1: Temel ENF Çıkarma
-- **Amaç**: ENF sinyalinin başarıyla çıkarılabilmesi
-- **Veri**: Sessiz ortam ses kaydı
-- **Beklenen Sonuç**: 50 Hz ± 0.1 Hz frekans tespiti
+- **Giriş**: 10 saniye ses kaydı
+- **Beklenen**: 50 Hz ENF sinyali
+- **Kabul Kriteri**: Frekans ±0.1 Hz
 
-### Senaryo 2: Gürültülü Ortam
-- **Amaç**: Gürültü altında ENF çıkarma
-- **Veri**: Ofis ortamı ses kaydı
-- **Beklenen Sonuç**: %80+ doğruluk oranı
+### Senaryo 2: Metadata Gömme
+- **Giriş**: ENF verisi + dosya
+- **Beklenen**: Gömülmüş metadata
+- **Kabul Kriteri**: %100 başarı
 
-### Senaryo 3: Video ENF
-- **Amaç**: Video dosyalarından ENF çıkarma
-- **Veri**: LED altında video kaydı
-- **Beklenen Sonuç**: Flicker analizi ile ENF tespiti
+### Senaryo 3: Performans Testi
+- **Giriş**: 100 dosya batch
+- **Beklenen**: 10 saniye işlem
+- **Kabul Kriteri**: Zaman aşımı yok
 
-### Senaryo 4: Metadata Gömme
-- **Amaç**: ENF verilerinin metadata'ya gömülmesi
-- **Veri**: Çıkarılan ENF verileri
-- **Beklenen Sonuç**: Metadata'da ENF verilerinin görünmesi
+## 📝 Raporlama
 
-### Senaryo 5: Doğrulama
-- **Amaç**: Gömülen verilerin doğruluğunu kontrol
-- **Veri**: Metadata'dan çıkarılan ENF verileri
-- **Beklenen Sonuç**: Orijinal verilerle %95+ uyum
+### Günlük Rapor
+- Toplanan dosya sayısı
+- Kalite metrikleri
+- Karşılaşılan sorunlar
+- İyileştirme önerileri
 
-## Çekim Takvimi
+### Haftalık Özet
+- İlerleme durumu
+- Performans analizi
+- Risk değerlendirmesi
+- Sonraki adımlar
 
-### Gün 1: Ses Kayıtları
-- 09:00-09:10: Sessiz ortam (iPhone)
-- 09:15-09:25: Sessiz ortam (Samsung)
-- 10:00-10:10: Ofis ortamı (iPhone)
-- 10:15-10:25: Ofis ortamı (Samsung)
-- 11:00-11:10: Dış mekan (iPhone)
-- 11:15-11:25: Dış mekan (Samsung)
+## 🚨 Risk Yönetimi
 
-### Gün 2: Video Kayıtları
-- 09:00-09:05: LED statik video (iPhone)
-- 09:10-09:15: LED statik video (Samsung)
-- 10:00-10:05: LED dinamik video (iPhone)
-- 10:10-10:15: LED dinamik video (Samsung)
-- 11:00-11:05: Karşılaştırma video (iPhone)
+### Teknik Riskler
+- **Düşük Kalite Veri**: Kalite kontrol protokolleri
+- **Ekipman Arızası**: Yedek ekipman
+- **Yazılım Hataları**: Test ve doğrulama
 
-### Gün 3: Eşzamanlı Kayıt
-- 09:00-09:05: Eşzamanlı ses kaydı
-- 10:00-10:05: Eşzamanlı video kaydı
+### Operasyonel Riskler
+- **Zaman Aşımı**: Proje planı güncelleme
+- **Kaynak Yetersizliği**: Alternatif çözümler
+- **Kalite Düşüşü**: Sürekli iyileştirme
 
-## Kalite Kontrol
+## 📚 Referanslar
+- ENF Teorisi ve Uygulamaları
+- Ses/Video İşleme Standartları
+- Metadata Formatları
+- Kalite Kontrol Metodları
 
-### Kayıt Öncesi
-- [ ] Cihazların şarj durumu kontrol edildi
-- [ ] Depolama alanı yeterli
-- [ ] Aydınlatma koşulları uygun
-- [ ] Gürültü seviyesi ölçüldü
-
-### Kayıt Sırasında
-- [ ] Cihazlar sabit tutuldu
-- [ ] Zaman damgaları kaydedildi
-- [ ] Başlangıç/bitiş sinyalleri verildi
-
-### Kayıt Sonrası
-- [ ] Dosyalar yedeklendi
-- [ ] Dosya bütünlüğü kontrol edildi
-- [ ] Metadata bilgileri kaydedildi
-- [ ] Dosya adlandırma standardına uyuldu
-
-## Veri Organizasyonu
-
-```
-data/
-├── raw/
-│   ├── audio/
-│   │   ├── sessiz/
-│   │   ├── ofis/
-│   │   └── dis_mekan/
-│   ├── video/
-│   │   ├── led_statik/
-│   │   ├── led_dinamik/
-│   │   └── karsilastirma/
-│   └── images/
-│       └── led_seri/
-├── processed/
-│   ├── enf_extracted/
-│   └── metadata_embedded/
-└── ground_truth/
-    ├── reference_enf/
-    └── validation_data/
-```
 
